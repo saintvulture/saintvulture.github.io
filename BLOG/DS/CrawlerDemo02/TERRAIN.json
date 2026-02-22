@@ -1,0 +1,38 @@
+{
+"terrain":[
+  {
+    "terrainID":"1",
+    "mapID":"#",
+    "IDcR": "255",
+    "IDcG": "0",
+    "IDcB": "0",
+    "name":"wall",
+    "walkable": false
+    
+  },
+  {
+    "mapID":"0",
+    "terrainID":".",
+    "IDcR": "255",
+    "IDcG": "0",
+    "IDcB": "0",
+    "name":"floor",
+    "walkable": true
+    
+  },
+    {
+    "mapID":"x",
+    "terrainID":"x",
+    "IDcR": "255",
+    "IDcG": "0",
+    "IDcB": "0",
+    "name":"bones",
+    "walkable": true
+    
+  }
+  
+  
+]
+
+
+}

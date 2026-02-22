@@ -1,0 +1,155 @@
+{
+"entry":[
+{
+    "ID":1001,
+  	"perkName": "Cup Half Full",
+    "class": "Mage",
+    "skill": "Destruction",
+	"text": "Spells cost {{num}}% less below half health.",
+    "num": 50,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Mage",
+        "outEffect": "+5%",
+        "outNum": 5
+      }
+    ]
+},
+  {
+    "ID":1002,
+  	"perkName": "The Pact",
+    "class": "Mage",
+    "skill": "Thaumaturgy",
+	"text": "Health does not regenerate. All spells are thrice as effective.",
+    "num": 0,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Rogue",
+        "outEffect": "-5%",
+         "outNum": -5
+      },
+      {
+        "outClass": "Rogue",
+        "outEffect": "+5%",
+         "outNum": 5
+      },
+      {
+        "outClass": "Mage",
+        "outEffect": "-10%",
+         "outNum": -10
+      }
+    ]
+},  {
+    "ID":1003,
+  	"perkName": "The Tower",
+    "class": "Warrior",
+    "skill": "Armor",
+	"text": "Heavy armor is {{num}}% more effective.",
+    "num": 20,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Warrior",
+        "outEffect": "+5%",
+         "outNum": 5
+      },
+      {
+        "outClass": "Mage",
+        "outEffect": "-10%",
+         "outNum": -10
+      }
+    ]
+},
+  {
+    "ID":1004,
+  	"perkName": "Maenad",
+    "class": "Mage",
+    "skill": "Restoration",
+	"text": "If you are diseased, restoration effects are {{num}}% stronger and last 50% longer.",
+    "num": 15,
+      
+    "outBoundNode":[
+    
+    ]
+},  {
+    "ID":1005,
+  	"perkName": "Iron Gut",
+    "class": "Rogue",
+    "skill": "Survival",
+	"text": "Health stops regenerating under {{num}}% hunger instead of 50%",
+     "num": 25,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Rogue",
+        "outEffect": "-5%",
+         "outNum": -5
+      },
+      {
+        "outClass": "Warrior",
+        "outEffect": "+5%",
+         "outNum": 5
+      },
+      {
+        "outClass": "Mage",
+        "outEffect": "-10%",
+         "outNum": -10
+      }
+    ]
+}, {
+    "ID":1006,
+  	"perkName": "Cannibal",
+    "class": "Rogue",
+    "skill": "Survival",
+	"text": "You lose hunger twice as fast. Able to feed on corpses to regenerate hunger and health. Chance to catch a disease.",
+   "num": 0,
+      
+    "outBoundNode":[
+   
+    ]
+},
+  
+  {
+    "ID":1007,
+  	"perkName": "Recital",
+    "class": "Mage",
+    "skill": "Thaumaturgy",
+	"text": "Prepare a cloak spell that has 1% chance per Thaumaturgy level to activate for free in combat.",
+   "num": 0,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Warrior",
+        "outEffect": "-15%",
+         "outNum": -15
+      },
+       
+      {
+        "outClass": "Mage",
+        "outEffect": "+5%",
+         "outNum": 5
+      }
+    ]
+},
+   {
+    "ID":1008,
+  	"perkName": "Immortal",
+    "class": "Warrior",
+    "skill": "Armor",
+	"text": "Take 75% less damage below {{num}}% health if wearing all Heavy Armor.",
+   "num": 15,
+      
+    "outBoundNode":[
+      {
+        "outClass": "Warrior",
+        "outEffect": "+10%",
+         "outNum": 10
+      }
+    ]
+}
+
+  ]
+}
+
