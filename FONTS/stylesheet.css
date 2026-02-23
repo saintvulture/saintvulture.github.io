@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'F25 Bank Printer';
+    src: url('F25BankPrinter.woff2') format('woff2'),
+        url('F25BankPrinter.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Flexi IBM VGA True';
+    src: url('Flexi_IBM_VGA_True.woff2') format('woff2'),
+        url('Flexi_IBM_VGA_True.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZT Nature';
+    src: url('ZTNature-Black.woff2') format('woff2'),
+        url('ZTNature-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZT Nature Med';
+    src: url('ZTNature-Medium.woff2') format('woff2'),
+        url('ZTNature-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
