@@ -2,6 +2,15 @@
 <html>
 <head>
     <title>MOXO Labs</title>
+	
+    <script src="MOXO/p5.js"></script>
+    <script src="MOXO/matter.js"></script>
+    <script src="MOXO/decomp.js" type="text/javascript"></script>
+    <script src="MOXO/p5.sound.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="MOXO/style.css">
+    <meta charset="utf-8" />
+  
 </head>
 <style>
 @font-face {
@@ -67,7 +76,15 @@
     ">
 
         <!-- Logo -->
-        <img src="MoxoLogo.png"
+		<div id="logo-container" style="
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:0px;
+    height:0px;
+">
+</div>
+          <!--  <img src="MoxoLogo.png"
              style="position:absolute; top:20px; left:20px; width:80px;">
           <!-- LABS Text -->
 <div style="
@@ -206,6 +223,7 @@
 
 
         <p>
+		
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in justo mi. Etiam ornare nunc id tortor consectetur, quis rutrum metus aliquet. Etiam suscipit dapibus arcu, ut fringilla elit vestibulum ut. Etiam nec varius est. Maecenas tristique, nulla id condimentum sollicitudin, nisl lorem tincidunt felis, ac cursus orci nisl eget justo. Duis semper orci eget gravida ornare. Vestibulum finibus, eros ut consequat viverra, ligula turpis finibus lacus, viverra suscipit ligula ante nec augue. Nam pretium non turpis ac convallis. Nam fermentum augue non diam vestibulum semper. Interdum et malesuada fames ac ante ipsum primis in faucibus.
             <!-- Image (optional) -->
    </p> <img src="BLOG/amduatViborg.jpg" 
@@ -328,8 +346,13 @@
 
         <p style="color:grey; font-size:14px; margin:0;">&copy; COPYRIGHT 2026, MOXO. All rights reserved.</p>
 
-    </div>
+
+
+</div>
 </center>
 
+<script src="MOXO/sketch.js"></script>
+
 </body>
+
 </html>
