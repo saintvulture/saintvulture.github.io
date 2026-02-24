@@ -5,7 +5,9 @@ var Engine = Matter.Engine,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
     Composite = Matter.Composite,
-    Vertices = Matter.Vertices;
+    Vertices = Matter.Vertices,
+    Query = Matter.Query,
+    Body = Matter.Body;
 
 var engine;
 var world;
@@ -66,61 +68,92 @@ function draw() {
     obj.show();
   }
 }
-
-
 function mouseClicked() {
+
+  // 1️⃣ Only allow interaction inside canvas
+  if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) {
+    return;
+  }
 
   engine.gravity.y = 1;
 
+  // Unfreeze everything
   for (let obj of objectArray) {
-    Matter.Body.setStatic(obj.body, false);
+    Body.setStatic(obj.body, false);
   }
 
-  let randomX = random(80, width - 80);
+  // 2️⃣ Check if we clicked a body
+  let allBodies = objectArray.map(obj => obj.body);
+  let clickedBodies = Query.point(allBodies, { x: mouseX, y: mouseY });
 
-  if (random() < 0.5) {
+  if (clickedBodies.length > 0) {
 
-    let logoColor1 = color('#e52956');
+    // We clicked a body — launch it
+    let clickedBody = clickedBodies[0];
 
-    objectArray.push(
-      new Letter(
-        randomX / scaleFactor,
-        -200,
-        letterM,
-        centerM
-      )
-    );
+    let center = clickedBody.position;
 
-    objectArray.push(
-      new Circle(
-        (randomX + 60) / scaleFactor,
-        -200,
-        50,
-        logoColor1
-      )
-    );
+    // Direction from click to center
+    let dx = center.x - mouseX;
+    let dy = center.y - mouseY;
+
+  let magnitude = 0.005;
+
+    Body.applyForce(clickedBody, center, {
+      x: dx * magnitude,
+      y: dy * magnitude
+    });
 
   } else {
 
-    let logoColor2 = color('#0f75ef');
+    // 3️⃣ Empty space clicked → spawn new object
 
-    objectArray.push(
-      new Letter(
-        randomX / scaleFactor,
-        -400,
-        letterX,
-        centerX
-      )
-    );
+    let randomX = random(80, width - 80);
 
-    objectArray.push(
-      new Circle(
-        (randomX - 60) / scaleFactor,
-        -400,
-        50,
-        logoColor2
-      )
-    );
+    if (random() < 0.5) {
+
+      let logoColor1 = color('#e52956');
+
+      objectArray.push(
+        new Letter(
+          randomX / scaleFactor,
+          -200,
+          letterM,
+          centerM
+        )
+      );
+
+      objectArray.push(
+        new Circle(
+          (randomX + 60) / scaleFactor,
+          -200,
+          50,
+          logoColor1
+        )
+      );
+
+    } else {
+
+      let logoColor2 = color('#0f75ef');
+
+      objectArray.push(
+        new Letter(
+          randomX / scaleFactor,
+          -400,
+          letterX,
+          centerX
+        )
+      );
+
+      objectArray.push(
+        new Circle(
+          (randomX - 60) / scaleFactor,
+          -400,
+          50,
+          logoColor2
+        )
+      );
+    }
   }
 }
 
