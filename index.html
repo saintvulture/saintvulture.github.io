@@ -54,7 +54,7 @@
 </style>
 <body style="
     background-color: gainsboro;
-    background-image: url('bg2.jpg');
+    background-image: url('bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -105,54 +105,82 @@
     right:-570px;
     white-space:nowrap;
 ">
-
-    <a href="https://store.steampowered.com/app/3681340" style="
+	  <a href="index.html" style="
         display:inline-block;
         background-color:white;
         border:1px solid black;
         padding:10px 8px;
-		font-size:12px;
+        font-size:12px;
         text-decoration:none;
         font-weight:none;
         color:black;
-		font-family: 'F25 Bank Printer', monospace;
+        font-family: 'F25 Bank Printer', monospace;
         box-shadow:2px 2px 0px gray;
         margin-left:-20px;
-    ">STEAM</a>
+        transition: all 0.2s ease;  /* smooth animation */
+    "
+    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='4px 4px 0px gray';"
+    onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='2px 2px 0px gray';"
+  >BLOG</a>
 
-    <a href="https://www.youtube.com/@moxo-studio" style="
+  <a href="#" onclick="loadPage('blog.html')" style="
         display:inline-block;
         background-color:white;
         border:1px solid black;
         padding:10px 8px;
-		font-size:12px;
+        font-size:12px;
         text-decoration:none;
         font-weight:none;
         color:black;
-		font-family: 'F25 Bank Printer', monospace;
+        font-family: 'F25 Bank Printer', monospace;
         box-shadow:2px 2px 0px gray;
         margin-left:-20px;
-    ">YOUTUBE</a>
+        transition: all 0.2s ease;  /* smooth animation */
+    "
+    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='4px 4px 0px gray';"
+    onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='2px 2px 0px gray';"
+  >PROJECTS</a>
 
-    <a href="#" style="
-         display:inline-block;
+  <a href="https://store.steampowered.com/app/3681340" style="
+        display:inline-block;
         background-color:white;
         border:1px solid black;
         padding:10px 8px;
-		font-size:12px;
+        font-size:12px;
         text-decoration:none;
         font-weight:none;
         color:black;
-		font-family: 'F25 Bank Printer', monospace;
+        font-family: 'F25 Bank Printer', monospace;
         box-shadow:2px 2px 0px gray;
         margin-left:-20px;
-    ">ABOUT</a>
+        transition: all 0.2s ease;
+    "
+    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='4px 4px 0px gray';"
+    onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='2px 2px 0px gray';"
+  >STEAM</a>
 
+  <a href="#" onclick="loadPage('about.html')" style="
+        display:inline-block;
+        background-color:white;
+        border:1px solid black;
+        padding:10px 8px;
+        font-size:12px;
+        text-decoration:none;
+        font-weight:none;
+        color:black;
+        font-family: 'F25 Bank Printer', monospace;
+        box-shadow:2px 2px 0px gray;
+        margin-left:-20px;
+        transition: all 0.2s ease;
+    "
+    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='4px 4px 0px gray';"
+    onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='2px 2px 0px gray';"
+  >ABOUT</a>
 </div>
 
 
 </div>
-
+<div id="content-area">
         <!-- Divider -->
         <hr style="
             height:2px;
@@ -241,7 +269,17 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in justo mi. Etiam ornare nunc id tortor consectetur, quis rutrum metus aliquet. Etiam suscipit dapibus arcu, ut fringilla elit vestibulum ut. Etiam nec varius est. Maecenas tristique, nulla id condimentum sollicitudin, nisl lorem tincidunt felis, ac cursus orci nisl eget justo. Duis semper orci eget gravida ornare. Vestibulum finibus, eros ut consequat viverra, ligula turpis finibus lacus, viverra suscipit ligula ante nec augue. Nam pretium non turpis ac convallis. Nam fermentum augue non diam vestibulum semper. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
             Donec venenatis accumsan nisl a interdum. Donec dignissim nisl ac tempor rutrum. Nulla quis est sed mi dictum sodales ut id elit. In ac libero enim. In ac justo rutrum, maximus sapien a, luctus velit. Pellentesque odio mi, egestas vel lorem vel, dapibus accumsan lorem. Praesent mattis vulputate orci a sagittis. Duis vel egestas velit. Vestibulum orci mi, ultrices a quam sit amet, pellentesque efficitur tortor. Morbi sit amet velit ac dolor dictum vehicula.
-
+			 </p> <p><a href="#" style="
+        display:inline-block;
+        background-color:orange;
+        border:1px solid black;
+        padding:2px 8px;
+        text-decoration:none;
+        font-weight:bold;
+        font-weight:bold;
+        color:black;
+        box-shadow:2px 2px 0px gray;
+    ">Download Zine &#x1F5AB;</a></p>
     </div>
     
     
@@ -329,7 +367,7 @@
     
 
 </div>
-
+</div>
 
 <!-- ENTRY END-->
         
@@ -344,7 +382,7 @@
             margin:0px 0px 10px 0px;
         ">
 
-        <p style="color:grey; font-size:14px; margin:0;">&copy; COPYRIGHT 2026, MOXO. All rights reserved.</p>
+        <p style="color:grey; font-size:14px; margin:0;">&copy; COPYRIGHT 2026, MOXO. All rights reserved. &#9969;</p>
 
 
 
@@ -352,7 +390,23 @@
 </center>
 
 <script src="MOXO/sketch.js"></script>
+<script>
+function loadPage(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            // Extract only the content-area from the loaded page
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(data, "text/html");
+            let newContent = doc.querySelector("#content-area").innerHTML;
 
+            document.getElementById("content-area").innerHTML = newContent;
+
+            window.scrollTo(0, 0); // scroll to top
+        })
+        .catch(error => console.error("Error loading page:", error));
+}
+</script>
 </body>
 
 </html>

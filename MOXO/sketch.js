@@ -35,6 +35,11 @@ function setup() {
   scaleFactor = min(width / BASE_WIDTH, height / BASE_HEIGHT);
 
   engine = Engine.create();
+  
+  engine.positionIterations = 10;   // default is 6
+engine.velocityIterations = 8;    // default is 4
+engine.constraintIterations = 4;  // default is 2
+
   world = engine.world;
 
   ground = Bodies.rectangle(
@@ -76,7 +81,7 @@ function mouseClicked() {
   }
 
   engine.gravity.y = 1;
-
+	
   // Unfreeze everything
   for (let obj of objectArray) {
     Body.setStatic(obj.body, false);
@@ -173,9 +178,9 @@ function Letter(baseX, baseY, vertices, center) {
 
   this.body = Bodies.fromVertices(x, y, scaledVertices);
 
-  this.body.friction = 0.2;
-  this.body.restitution = 0.5;
-
+  this.body.friction = 0.015;
+  this.body.restitution = 0.35;
+this.body.frictionAir = 0.02;
   Composite.add(world, this.body);
 
   this.show = function() {
@@ -211,9 +216,9 @@ function Circle(baseX, baseY, baseRadius, c) {
 
   this.body = Bodies.circle(x, y, r);
 
-  this.body.friction = 0.2;
-  this.body.restitution = 0.6;
-
+  this.body.friction = 0.015;
+  this.body.restitution = 0.45;
+this.body.frictionAir = 0.02;
   Composite.add(world, this.body);
 
   this.show = function() {
