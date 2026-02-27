@@ -238,17 +238,20 @@ function loadPage(page) {
     fetch(page)
         .then(response => response.text())
         .then(data => {
-            // Extract only the content-area from the loaded page
             let parser = new DOMParser();
             let doc = parser.parseFromString(data, "text/html");
             let newContent = doc.querySelector("#content-area").innerHTML;
 
             document.getElementById("content-area").innerHTML = newContent;
-
-            window.scrollTo(0, 0); // scroll to top
+            window.scrollTo(0, 0);
         })
         .catch(error => console.error("Error loading page:", error));
 }
+
+
+window.addEventListener("DOMContentLoaded", function () {
+    loadPage("blog.html");
+});
 </script>
 </body>
 
