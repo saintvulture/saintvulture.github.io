@@ -128,20 +128,19 @@
 </style>
 
 <script>
-const galleryItems = document.querySelectorAll('.gallery-item');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
-// Open full image on click
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-    });
+// Use event delegation on the gallery container
+document.getElementById('gallery').addEventListener('click', (e) => {
+    const item = e.target.closest('.gallery-item');
+    if (!item) return; // clicked outside a gallery-item
+    const img = item.querySelector('img');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
 });
 
-// Close when clicking anywhere
+// Close lightbox on click
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
     lightboxImg.src = '';
