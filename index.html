@@ -289,6 +289,31 @@ window.addEventListener("DOMContentLoaded", function () {
     loadPage("blog.html");
 });
 </script>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+// Global click handler (works for dynamically loaded content)
+document.addEventListener('click', function(e) {
+
+    // Check if a gallery item was clicked
+    const item = e.target.closest('.gallery-item');
+    if (item) {
+        const img = item.querySelector('img');
+        if (!img) return;
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+        return;
+    }
+
+    // Close if clicking lightbox
+    if (e.target.id === 'lightbox') {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+</script>
 </body>
 
 </html>
