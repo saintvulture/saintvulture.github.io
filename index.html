@@ -123,7 +123,7 @@
     onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='2px 2px 0px gray';"
   >BLOG</a>
 
-  <a href="#" onclick="loadPage(' download.html')" style="
+  <a href="#" onclick="loadPage('download.html')" style="
         display:inline-block;
         background-color:white;
         border:1px solid black;
@@ -268,6 +268,26 @@
         <p style="color:grey; font-size:14px; margin:0;">&copy; COPYRIGHT 2026, MOXO. All rights reserved. &#9969;</p>
 </center>
 
+
+<!-- Global Lightbox (must live in index.html) -->
+<div id="lightbox" style="
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.8);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+">
+    <img id="lightbox-img" src="" style="
+        max-width:90%;
+        max-height:90%;
+        box-shadow: 4px 4px 0px black;
+        border:2px solid white;
+    ">
+</div>
+
+
 <script src="MOXO/sketch.js"></script>
 <script>
 function loadPage(page) {
@@ -291,23 +311,23 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-// Global click handler (works for dynamically loaded content)
 document.addEventListener('click', function(e) {
 
-    // Check if a gallery item was clicked
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // If gallery item clicked
     const item = e.target.closest('.gallery-item');
     if (item) {
         const img = item.querySelector('img');
         if (!img) return;
+
         lightboxImg.src = img.src;
         lightbox.style.display = 'flex';
         return;
     }
 
-    // Close if clicking lightbox
+    // Close when clicking anywhere on lightbox
     if (e.target.id === 'lightbox') {
         lightbox.style.display = 'none';
         lightboxImg.src = '';
